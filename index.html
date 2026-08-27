@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Hesap Makinesi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+table, tr {
+    border: 3px solid rgb(53, 52, 52);
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 150px;
+    background-color: grey;
+    border-radius: 15px;
+}
+
+button{
+    height: 50px;
+    width:50px;
+    border-radius: 5px;
+    background-color: rgb(197, 195, 197);
+    font-size: 21px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0, 0, 5px, 0;
+}
+
+#clear{
+    background-color: orange;
+    font-size: 21px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0, 0, 5px, 0;
+    font-weight: 650;
+}
+
+#add, #minus, #multip, #sub {
+    background-color: rgb(166, 196, 199);
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0, 0, 5px, 0;
+}
+
+#equal{
+background-color: rgb(167, 207, 169);
+    font-size: 21px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0, 0, 5px, 0;
+    font-weight: 650;
+}
+
+#display{
+    width: 210px;
+    height: 40px;
+    background-color: rgb(181, 199, 255);
+}
+
+#display {
+    text-align: right;
+    font-size: 30px;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+<table id="calculator">
+<tr>
+            <td colspan="5"><input type="text" id="display"></td>
+        </tr>
+<tr>
+    <td><button id="7" onclick="press('7')">7</button></td>
+    <td><button id="8" onclick="press('8')">8</button></td>
+    <td><button id="9" onclick="press('9')">9</button></td>
+    <td><button id="add" onclick="press('+')">+</button></td>
+</tr>
+
+<tr>
+    <td><button id="4" onclick="press('4')">4</button></td>
+    <td><button id="5" onclick="press('5')">5</button></td>
+    <td><button id="6" onclick="press('6')">6</button></td>
+    <td><button id="minus" onclick="press('-')">-</button></td>
+</tr>
+
+<tr>
+    <td><button id="1" onclick="press('1')">1</button></td>
+    <td><button id="2" onclick="press('2')">2</button></td>
+    <td><button id="3" onclick="press('3')">3</button></td>
+    <td><button id="multip" onclick="press('*')">x</button></td>
+</tr>
+<tr>
+    <td><button id="clear" onclick="cleardisplay('')">C</button></td>
+    <td><button id="0" onclick="press('0')">0</button></td>
+    <td><button id="equal" onclick="calculate('=')">=</button></td>
+    <td><button id="sub" onclick="press('/')">/</button></td>
+</tr>
+</table>
+
+<script>
+function press(number) {
+    let screen = document.getElementById('display');
+    screen.value = screen.value + number;
+}
+
+function cleardisplay() {
+    document.getElementById('display').value = "";
+}
+
+function calculate(){
+    let screen=document.getElementById('display');
+    screen.value=eval(screen.value);
+}
+</script>
+</body>
+</html>
